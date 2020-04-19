@@ -1,8 +1,14 @@
 import React from 'react';
-import { Text } from 'react-native';
-
-// import { Container } from './styles';
+import { ScrollView } from 'react-native';
+import Header from '../../components/Header';
+import { Container } from './styles';
 
 export default function Home() {
-  return <Text>Home</Text>;
+  return (
+    <Container>
+      <ScrollView>
+        <Header />
+      </ScrollView>
+    </Container>
+  );
 }
