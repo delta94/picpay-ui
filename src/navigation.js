@@ -33,19 +33,26 @@ const icons = {
 
 const tabBarOption = {
   style: {
-    backgroundColor: '#131418',
-    borderTopColor: 'rgba(255,255,255,.2',
+    backgroundColor: '#f8f8f8',
+    borderTopColor: 'rgba(0,0,0,.2)',
     height: height * 0.095,
     paddingBottom: 5,
   },
-  activeTintColor: '#fff',
-  inactiveTintColor: '#696969',
+  activeTintColor: '#0B6651',
+  inactiveTintColor: '#91A29A',
 };
 
-function configScreenOption({ route }) {
+function configScreenOption({ route, navigation }) {
   return {
-    tabBarIcon: ({ color, size }) => {
-      if (route.name === 'Pay') return <PayButton />;
+    tabBarIcon: ({ color, size, focused }) => {
+      if (route.name === 'Pay')
+        return (
+          <PayButton
+            onPress={() => navigation.navigate('Pay')}
+            focused={focused}
+          />
+        );
+
       const { lib: Icon, name } = icons[route.name];
       return <Icon name={name} size={size} color={color} />;
     },
