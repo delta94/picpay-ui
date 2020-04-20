@@ -10,7 +10,9 @@ export const Container = styled.ScrollView.attrs(() => ({
   margin-top: 20px;
 `;
 
-export const Option = styled.View`
+export const Option = styled.TouchableOpacity.attrs(() => ({
+  activeOpacity: 0.6,
+}))`
   background-color: ${({ bgColor }) => bgColor};
   width: 140px;
   height: 190px;
